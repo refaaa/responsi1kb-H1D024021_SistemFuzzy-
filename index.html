@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deteksi Kondisi Tanaman Cabai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    
+    .welcome-icon i { color: #e63946; } 
+    .leaf-float i { color: #2e7d32; } 
+    .pill i { color: #2e7d32; margin-right: 6px; }
+    .ic-icon i { color: #2e7d32; font-size: 1.8rem; }
+    .nav-logo i { color: #e63946; }
+    .page-hero-icon i { color: #2e7d32; }
+    .slider-emoji i { color: #2e7d32; font-size: 1.4rem; }
+    .range-axis i:first-child { color: #4caf50; }
+    .range-axis i:last-child { color: #8d6e63; }
+    .range-axis i { margin-right: 4px; }
+    .gejala-icon i { font-size: 1.2rem; }
+    #g-menguning .gejala-icon i { color: #ffc107; }
+    #g-bercak .gejala-icon i { color: #d32f2f; }
+    #g-menggulung .gejala-icon i { color: #ff9800; }
+    #g-terhambat .gejala-icon i { color: #f57c00; }
+    #g-akar .gejala-icon i { color: #0288d1; }
+    #g-nobercak .gejala-icon i { color: #4caf50; }
+    .sb-icon i { color: #2e7d32; font-size: 1.5rem; }
+    .rh-emoji i { font-size: 3rem; }
+    .result-hero.sehat .rh-emoji i { color: #2e7d32; }
+    .result-hero.kurang .rh-emoji i { color: #f57c00; }
+    .result-hero.tidak .rh-emoji i { color: #d32f2f; }
+    .btn-ulangi i { margin-right: 6px; }
+    .hasil-actions .btn-ulangi i { color: #2e7d32; }
+  </style>
+</head>
+<body>
+
+
+<div id="page-welcome" class="page active">
+
+  <!-- Dekorasi background -->
+  <div class="welcome-deco">
+    <div class="deco-circle c1"></div>
+    <div class="deco-circle c2"></div>
+    <div class="deco-circle c3"></div>
+    <div class="leaf-float l1"><i class="fas fa-leaf"></i></div>
+    <div class="leaf-float l2"><i class="fas fa-leaf"></i></div>
+    <div class="leaf-float l3"><i class="fas fa-seedling"></i></div>
+  </div>
+
+  <div class="welcome-body">
+    <!-- Logo / Icon -->
+    <div class="welcome-icon-wrap">
+      <div class="welcome-icon"><i class="fas fa-pepper-hot"></i></div>
+    </div>
+
+
+    <h1 class="welcome-title">Deteksi Tanaman<br /><span>Cabai</span></h1>
+    <p class="welcome-sub">
+      Kenali kondisi tanamanmu dan dapatkan saran perawatan terbaik
+      menggunakan sistem <strong>Fuzzy Logic</strong> yang cerdas.
+    </p>
+
+    <div class="feature-pills">
+      <span class="pill"><i class="fas fa-leaf"></i> 4 Parameter</span>
+      <span class="pill"><i class="fas fa-bolt"></i> Hasil Instan</span>
+      <span class="pill"><i class="fas fa-lightbulb"></i> Saran Perawatan</span>
+    </div>
+
+
+    <button class="btn-cta" onclick="App.goTo('page-diagnosa')">
+      <span>Mulai Diagnosa</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="ic-icon"><i class="fas fa-bullseye"></i></div>
+        <div class="ic-title">Akurat</div>
+        <div class="ic-desc">Berbasis algoritma Fuzzy Mamdani</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon"><i class="fas fa-list-ul"></i></div>
+        <div class="ic-title">Lengkap</div>
+        <div class="ic-desc">Deteksi 4 jenis kondisi tanaman</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon"><i class="fas fa-seedling"></i></div>
+        <div class="ic-title">Praktis</div>
+        <div class="ic-desc">Cukup geser slider, hasil langsung muncul</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- page diagnosa -->
+<div id="page-diagnosa" class="page">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <button class="nav-back" onclick="App.goTo('page-welcome')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Kembali
+    </button>
+    <div class="nav-brand">
+      <span class="nav-logo"><i class="fas fa-pepper-hot"></i></span>
+      <span class="nav-name">CabaiCheck</span>
+    </div>
+    <div class="nav-step">Langkah 1 / 2</div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- Page judul-->
+    <div class="page-hero">
+      <div class="page-hero-icon"><i class="fas fa-leaf"></i></div>
+      <h2>Deteksi Tanaman Cabai</h2>
+      <p>Kenali kondisi tanamanmu dan dapatkan saran perawatannya.</p>
+    </div>
+
+
+    <div class="section-card">
+      <div class="section-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        Atur Kondisi Tanaman
+      </div>
+      <p class="section-card-hint">Geser slider ke kanan = kondisi makin parah</p>
+
+      <div class="slider-list">
+
+        <div class="slider-item">
+          <div class="slider-head">
+            <span class="slider-emoji"><i class="fas fa-leaf"></i></span>
+            <div class="slider-meta">
+              <div class="slider-name">Warna Daun</div>
+              <div class="slider-sub">Bobot 30% · Hijau → Kuning → Coklat</div>
+            </div>
+            <div class="slider-badge" id="val1">20</div>
+          </div>
+          <input type="range" min="0" max="100" value="20" id="s1" class="range-slider" />
+          <div class="range-axis">
+            <span><i class="fas fa-leaf" style="color:#4caf50;"></i> Hijau segar</span>
+            <span><i class="fas fa-leaf" style="color:#ffc107;"></i> Kuning</span>
+            <span><i class="fas fa-leaf" style="color:#8d6e63;"></i> Coklat</span>
+          </div>
+          <div class="fuzzy-bars">
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-green" id="f1r"></div></div><div class="fb-lbl">Hijau</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-amber" id="f1m"></div></div><div class="fb-lbl">Kuning</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-red" id="f1h"></div></div><div class="fb-lbl">Coklat</div></div>
+          </div>
+          <div class="mem-row" id="m1"></div>
+        </div>
+
+        <div class="slider-divider"></div>
+
+        <div class="slider-item">
+          <div class="slider-head">
+            <span class="slider-emoji"><i class="fas fa-leaf"></i></span>
+            <div class="slider-meta">
+              <div class="slider-name">Tingkat Kerusakan Daun</div>
+              <div class="slider-sub">Bobot 25% · Normal → Rusak</div>
+            </div>
+            <div class="slider-badge" id="val2">15</div>
+          </div>
+          <input type="range" min="0" max="100" value="15" id="s2" class="range-slider" />
+          <div class="range-axis">
+            <span><i class="fas fa-check-circle" style="color:#4caf50;"></i> Normal</span>
+            <span><i class="fas fa-exclamation-triangle" style="color:#ff9800;"></i> Sedang</span>
+            <span><i class="fas fa-times-circle" style="color:#d32f2f;"></i> Rusak parah</span>
+          </div>
+          <div class="fuzzy-bars">
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-green" id="f2r"></div></div><div class="fb-lbl">Normal</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-amber" id="f2m"></div></div><div class="fb-lbl">Sedang</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-red" id="f2h"></div></div><div class="fb-lbl">Rusak</div></div>
+          </div>
+          <div class="mem-row" id="m2"></div>
+        </div>
+
+        <div class="slider-divider"></div>
+
+        <div class="slider-item">
+          <div class="slider-head">
+            <span class="slider-emoji"><i class="fas fa-seedling"></i></span>
+            <div class="slider-meta">
+              <div class="slider-name">Pertumbuhan Tanaman</div>
+              <div class="slider-sub">Bobot 25% · Normal → Kerdil</div>
+            </div>
+            <div class="slider-badge" id="val3">25</div>
+          </div>
+          <input type="range" min="0" max="100" value="25" id="s3" class="range-slider" />
+          <div class="range-axis">
+            <span><i class="fas fa-check-circle" style="color:#4caf50;"></i> Normal</span>
+            <span><i class="fas fa-hourglass-half" style="color:#ff9800;"></i> Terhambat</span>
+            <span><i class="fas fa-chart-line" style="color:#d32f2f;"></i> Kerdil</span>
+          </div>
+          <div class="fuzzy-bars">
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-green" id="f3r"></div></div><div class="fb-lbl">Normal</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-amber" id="f3m"></div></div><div class="fb-lbl">Terhambat</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-red" id="f3h"></div></div><div class="fb-lbl">Kerdil</div></div>
+          </div>
+          <div class="mem-row" id="m3"></div>
+        </div>
+
+        <div class="slider-divider"></div>
+
+        <!-- Slider 4: Kondisi Akar -->
+        <div class="slider-item">
+          <div class="slider-head">
+            <span class="slider-emoji"><i class="fas fa-tree"></i></span>
+            <div class="slider-meta">
+              <div class="slider-name">Kondisi Akar</div>
+              <div class="slider-sub">Bobot 20% · Sehat → Busuk</div>
+            </div>
+            <div class="slider-badge" id="val4">10</div>
+          </div>
+          <input type="range" min="0" max="100" value="10" id="s4" class="range-slider" />
+          <div class="range-axis">
+            <span><i class="fas fa-check-circle" style="color:#4caf50;"></i> Sehat</span>
+            <span><i class="fas fa-heartbeat" style="color:#ff9800;"></i> Lemah</span>
+            <span><i class="fas fa-skull" style="color:#d32f2f;"></i> Busuk</span>
+          </div>
+          <div class="fuzzy-bars">
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-green" id="f4r"></div></div><div class="fb-lbl">Sehat</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-amber" id="f4m"></div></div><div class="fb-lbl">Lemah</div></div>
+            <div class="fb-group"><div class="fb-track"><div class="fb-fill fb-red" id="f4h"></div></div><div class="fb-lbl">Busuk</div></div>
+          </div>
+          <div class="mem-row" id="m4"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GEJALA -->
+    <div class="section-card">
+      <div class="section-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Pilih Gejala yang Terlihat
+      </div>
+
+      <div class="gejala-grid">
+        <label class="gejala-item" id="g-menguning">
+          <input type="checkbox" id="c-menguning" onchange="App.update()" />
+          <span class="gejala-check"></span>
+          <span class="gejala-icon"><i class="fas fa-leaf" style="color:#ffc107;"></i></span>
+          <span class="gejala-text">Daun Menguning</span>
+        </label>
+        <label class="gejala-item" id="g-bercak">
+          <input type="checkbox" id="c-bercak" onchange="App.update()" />
+          <span class="gejala-check"></span>
+          <span class="gejala-icon"><i class="fas fa-circle" style="color:#d32f2f;"></i></span>
+          <span class="gejala-text">Bercak Hitam / Coklat</span>
+        </label>
+        <label class="gejala-item" id="g-menggulung">
+          <input type="checkbox" id="c-menggulung" onchange="App.update()" />
+          <span class="gejala-check"></span>
+          <span class="gejala-icon"><i class="fas fa-leaf" style="color:#ff9800;"></i></span>
+          <span class="gejala-text">Daun Menggulung</span>
+        </label>
+        <label class="gejala-item" id="g-terhambat">
+          <input type="checkbox" id="c-terhambat" onchange="App.update()" />
+          <span class="gejala-check"></span>
+          <span class="gejala-icon"><i class="fas fa-chart-line" style="color:#f57c00;"></i></span>
+          <span class="gejala-text">Pertumbuhan Terhambat</span>
+        </label>
+        <label class="gejala-item" id="g-akar">
+          <input type="checkbox" id="c-akar" onchange="App.update()" />
+          <span class="gejala-check"></span>
+          <span class="gejala-icon"><i class="fas fa-water" style="color:#0288d1;"></i></span>
+          <span class="gejala-text">Akar Busuk</span>
+        </label>
+        <label class="gejala-item" id="g-nobercak">
+          <input type="checkbox" id="c-nobercak" onchange="App.update()" />
+          <span class="gejala-check"></span>
+          <span class="gejala-icon"><i class="fas fa-check" style="color:#4caf50;"></i></span>
+          <span class="gejala-text">Tidak Ada Bercak</span>
+        </label>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-cek" onclick="App.goTo('page-hasil')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Cek Kondisi
+        </button>
+        <button class="btn-ulangi" onclick="App.reset()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+          Ulangi
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+<!-- page hasil -->
+<div id="page-hasil" class="page">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <button class="nav-back" onclick="App.goTo('page-diagnosa')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Ubah Input
+    </button>
+    <div class="nav-brand">
+      <span class="nav-logo"><i class="fas fa-pepper-hot"></i></span>
+      <span class="nav-name">CabaiCheck</span>
+    </div>
+    <div class="nav-step">Langkah 2 / 2</div>
+  </header>
+
+  <main class="page-content">
+
+    <div class="result-hero" id="resultHero">
+      <div class="rh-emoji" id="resultEmoji"><i class="fas fa-leaf"></i></div>
+      <div class="rh-label">Kondisi Tanamanmu</div>
+      <div class="rh-status" id="resultStatus">Sehat</div>
+      <div class="rh-desc" id="resultDesc">Tanamanmu dalam kondisi prima!</div>
+      <div class="rh-bar-wrap">
+        <div class="rh-bar" id="progressBar" style="width:15%"></div>
+      </div>
+      <div class="rh-score" id="scoreLabel">Skor kondisi: 15 / 100</div>
+    </div>
+
+    <!-- Skor per parameter -->
+    <div class="section-card">
+      <div class="section-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Skor Fuzzy per Parameter
+      </div>
+      <div class="score-grid">
+        <div class="score-box"><div class="sb-icon"><i class="fas fa-leaf"></i></div><div class="sb-name">Warna Daun</div><div class="sb-val" id="sc1">—</div><div class="sb-weight">Bobot 30%</div></div>
+        <div class="score-box"><div class="sb-icon"><i class="fas fa-leaf"></i></div><div class="sb-name">Kerusakan</div><div class="sb-val" id="sc2">—</div><div class="sb-weight">Bobot 25%</div></div>
+        <div class="score-box"><div class="sb-icon"><i class="fas fa-seedling"></i></div><div class="sb-name">Pertumbuhan</div><div class="sb-val" id="sc3">—</div><div class="sb-weight">Bobot 25%</div></div>
+        <div class="score-box"><div class="sb-icon"><i class="fas fa-tree"></i></div><div class="sb-name">Akar</div><div class="sb-val" id="sc4">—</div><div class="sb-weight">Bobot 20%</div></div>
+      </div>
+    </div>
+
+    <!-- Rekomendasi -->
+    <div class="section-card">
+      <div class="section-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Yang Harus Kamu Lakukan
+      </div>
+      <div class="rec-list" id="recGrid"></div>
+    </div>
+
+    <div class="hasil-actions">
+      <button class="btn-cek" onclick="App.goTo('page-diagnosa')">
+        ← Ubah Diagnosa
+      </button>
+      <button class="btn-ulangi" onclick="App.goTo('page-welcome')">
+        <i class="fas fa-home"></i> Mulai Ulang
+      </button>
+    </div>
+
+  </main>
+</div>
+
+<script src="data.js"></script>
+<script src="fuzzy.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
